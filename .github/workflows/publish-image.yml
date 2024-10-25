@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # IMAGE_NAME maps to the Docker image name
-  IMAGE_NAME: cncf/external-gha-runner
+  IMAGE_NAME: abcxyzbank/external-gha-runner
 
   # Map current release tag to the version of booty
   BOOTY_VERSION: $GITHUB_REF_NAME
@@ -155,7 +155,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ghcr.io/cncf/gha-runner:openeuler
+            ghcr.io/abcxyzbank/gha-runner:openeuler
           labels: ${{ steps.meta.outputs.labels }}
           file: Dockerfile.openeuler
       - name: Sign the published OpenEuler Docker image
